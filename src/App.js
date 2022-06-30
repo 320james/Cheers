@@ -10,7 +10,7 @@ import Footer from "./components/Footer/Footer";
 import PostCreateView from "./components/ForHome/PostCreateView";
 import AnnouncementCreateView from "./components/ForHome/AnnouncementCreateView";
 import EditUserView from "./components/Navbar/EditUserView";
-
+import Sidebar from "./components/Sidebar/Sidebar";
 import EditView from "./components/ForHome/EditView";
 import Reports from "./pages/Reports";
 
@@ -42,7 +42,7 @@ function App() {
 
         <Router forceRefresh={true}>
           <GlobalStyle />
-          {/* <Sidebar isOpen={isOpen} toggle={toggle} /> */}
+          <Sidebar isOpen={isOpen} toggle={toggle} />
           <Navbar toggle={toggle} />
           <Switch>
             <Route path="/" exact component={HomePage} />
