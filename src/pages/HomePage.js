@@ -57,7 +57,7 @@ function HomePage(prop) {
 async function getAnnouncementsFromDatabase() {
     const res = await axios({
         method: "get",
-        url: `https://cheers-application.herokuapp.com/api/messages/`,
+        url: `https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/messages/`,
         headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
     });
     return res.data;

@@ -85,7 +85,7 @@ function Navbar({ toggle }) {
 async function getUserFromDatabase() {
     const res = await axios({
         method: "get",
-        url: "https://cheers-application.herokuapp.com/api/auth",
+        url: "https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/auth",
         headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
     });
     return res.data;

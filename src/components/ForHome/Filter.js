@@ -87,7 +87,7 @@ const Filter = ({ filters, setPosts, filterPostsFromDatabase, getPostsFromDataba
     async function getMyPostsFromDatabase() {
         const res = await axios({
             method: "get",
-            url: "https://cheers-application.herokuapp.com/api/posts/my",
+            url: "https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/posts/my",
             headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
         });
         let posts = res.data

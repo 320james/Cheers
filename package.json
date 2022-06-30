@@ -48,5 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://cheers-application.herokuapp.com"
+  "proxy": "https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com"
 }

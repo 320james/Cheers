@@ -35,7 +35,7 @@ const PostLayout = () => {
 async function getPostsFromDatabase() {
   const res = await axios({
     method: "get",
-    url: "https://cheers-application.herokuapp.com/api/posts/all",
+    url: "https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/posts/all",
     headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
   });
   let posts = res.data

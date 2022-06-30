@@ -96,7 +96,7 @@ const LoginForm = () => {
 
     async function login(credentials) {
         try {
-            const res = await axios.post("https://cheers-application.herokuapp.com/api/auth", credentials);
+            const res = await axios.post("https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/auth", credentials);
             const jwt = res.data.token
             localStorage.setItem("token", jwt);
             window.location.href = "/";
