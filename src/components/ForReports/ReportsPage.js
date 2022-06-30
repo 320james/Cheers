@@ -160,7 +160,7 @@ const EnhancedTableToolbar = (props) => {
         await axios({
           method: "delete",
           url: `https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/users/${selectedUser}`,
-          headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
+          headers: { "Content-Type": "application/json" },
         });
       });
       // eslint-disable-next-line no-self-assign
@@ -178,7 +178,7 @@ const EnhancedTableToolbar = (props) => {
         await axios({
           method: "PUT",
           url: `https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/users/${selectedUser}`,
-          headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
+          headers: { "Content-Type": "application/json" },
         });
       });
       // eslint-disable-next-line no-self-assign
@@ -294,7 +294,7 @@ export default function ReportsPage() {
     const res = await axios({
       method: "get",
       url: "https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/auth",
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
+      headers: { "Content-Type": "application/json" },
     });
     return res.data;
   }
@@ -303,7 +303,7 @@ export default function ReportsPage() {
     const res = await axios({
       method: "get",
       url: "https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/users",
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
+      headers: { "Content-Type": "application/json" },
     });
     return res.data;
   }
@@ -312,7 +312,7 @@ export default function ReportsPage() {
     const res = await axios({
       method: "post",
       url: "https://cors-anywhere.herokuapp.com/https://cheers-application.herokuapp.com/api/posts/counts",
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
+      headers: { "Content-Type": "application/json" },
     });
     return res.data;
   }
