@@ -102,7 +102,10 @@ async function deletePost(endpoint) {
     const res = await axios({
         method: "delete",
         url: endpoint,
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+        },
     });
     return res.data;
 }

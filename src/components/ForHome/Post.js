@@ -139,7 +139,7 @@ async function getIngredientsFromDatabase(recipe_id) {
     const res = await axios({
         method: "get",
         url: `https://cheers-application.herokuapp.com/api/ingredients/${recipe_id}`,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
     });
     return res.data;
 }

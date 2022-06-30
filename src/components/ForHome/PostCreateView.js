@@ -88,7 +88,7 @@ const PostCreateView = () => {
     const res = await axios({
       method: "get",
       url: "https://cheers-application.herokuapp.com/api/auth",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
     });
     return res.data;
   }
@@ -97,7 +97,7 @@ const PostCreateView = () => {
     const res = await axios({
       method: "get",
       url: "https://cheers-application.herokuapp.com/api/drink_categories",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
     });
     return res.data;
   }
