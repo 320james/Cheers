@@ -1,4 +1,6 @@
 [[redirects]]
-from = '/*'
-to = 'https://cheers-application.netlify.app/'
-status = 200
+  from = "/*"
+  to = "https://cheers-application.herokuapp.com/:splat"
+  status = 200
+  force = true
+
