@@ -20,7 +20,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-  origin: "*"
+  origin: "https://cheers-application.netlify.app"
 }))
 
 // Init Middleware
