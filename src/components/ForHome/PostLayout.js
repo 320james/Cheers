@@ -35,7 +35,7 @@ const PostLayout = () => {
 async function getPostsFromDatabase() {
   const res = await axios({
     method: "get",
-    url: "/api/posts/all",
+    url: "https://cheers-application.herokuapp.com/api/posts/all",
     headers: { "Content-Type": "application/json" },
   });
   let posts = res.data

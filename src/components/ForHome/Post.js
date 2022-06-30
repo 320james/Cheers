@@ -138,7 +138,7 @@ const Post = ({ title, user, rating, category, instructions, recipe_id, post_id,
 async function getIngredientsFromDatabase(recipe_id) {
     const res = await axios({
         method: "get",
-        url: `/api/ingredients/${recipe_id}`,
+        url: `https://cheers-application.herokuapp.com/api/ingredients/${recipe_id}`,
         headers: { "Content-Type": "application/json" },
     });
     return res.data;

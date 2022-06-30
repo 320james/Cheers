@@ -143,7 +143,7 @@ const SignUpForm = () => {
 
     async function signUp(credentials) {
         try {
-            const res = await axios.post("/api/users", credentials);
+            const res = await axios.post("https://cheers-application.herokuapp.com/api/users", credentials);
             const jwt = res.data.token
             localStorage.setItem("token", jwt);
             window.location.href = "/";
