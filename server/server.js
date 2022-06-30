@@ -20,14 +20,17 @@ const cors = require('cors');
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 
 
 // Init Middleware
 app.use(express.json({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
+app.get('/', cors(), (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.send('Hi there');
 });
 
