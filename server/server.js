@@ -23,7 +23,7 @@ const app = express();
 app.use(express.json({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hi there');
 });
 

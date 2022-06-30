@@ -11,7 +11,7 @@ var mysqlPool = require("../../mysqlPool");
 // @route   GET api/auth
 // @desc    Test route
 // @access  Public (aka you don't need a token to access this route)
-router.get('/*', auth, async (req, res) => {
+router.get('/', auth, async (req, res) => {
     // Getting user's data after receiving web token
     // Put in try catch because we are getting from database (async/await)
     try {
@@ -38,7 +38,7 @@ router.get('/*', auth, async (req, res) => {
 // @desc    Authenticate user & get token (Login)
 // @access  Public
 
-router.post('/*',
+router.post('/',
     [
         check('email', 'Please include a valid email').isEmail(),
         check('password', 'Password is required')
