@@ -1,6 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const proxy = require('http-proxy-middleware');
+
+module.exports = function (app) {
+  app.use(proxy('/api', {
+    target: 'https://cheers-application.herokuapp.com',
+    logLevel: 'debug',
+    changeOrigin: true
+  }));
+};
 
 // Connect database
 // var mysqlPool = require("./mysqlPool");
@@ -21,7 +30,6 @@ const cors = require('cors');
 const app = express();
 app.use(cors({
   origin: "https://cheers-application.netlify.app",
-  methods: ["GET", "POST", "DELETE"],
   credentials: true,
 }))
 
