@@ -87,7 +87,7 @@ const Filter = ({ filters, setPosts, filterPostsFromDatabase, getPostsFromDataba
     async function getMyPostsFromDatabase() {
         const res = await axios({
             method: "get",
-            url: "https://cheers-application.herokuapp.com/api/posts/my",
+            url: "/api/posts/my",
             headers: { "Content-Type": "application/json" },
         });
         let posts = res.data

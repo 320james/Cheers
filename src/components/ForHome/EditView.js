@@ -134,7 +134,7 @@ const EditView = () => {
     const body = { title, user, ingredients: outerArray, category: drinkCategory, instructions, star_num: rating, post_id: post.post_id, recipe_id: post.recipe_id };
     console.log(body)
     axios
-      .put(`https://cheers-application.herokuapp.com/api/posts/${post.post_id}`, body)
+      .put(`/api/posts/${post.post_id}`, body)
       .then((res) => console.log("saved! " + res.data))
       .catch((err) => console.log(err));
 
@@ -233,7 +233,7 @@ const EditView = () => {
 async function getPost(id) {
   const res = await axios({
     method: "get",
-    url: `https://cheers-application.herokuapp.com/api/posts/${id}`,
+    url: `/api/posts/${id}`,
     headers: { "Content-Type": "application/json" },
   });
   return res.data;
@@ -242,7 +242,7 @@ async function getPost(id) {
 async function getIngredientsFromDatabase(recipe_id) {
   const res = await axios({
     method: "get",
-    url: `https://cheers-application.herokuapp.com/api/ingredients/${recipe_id}`,
+    url: `/api/ingredients/${recipe_id}`,
     headers: { "Content-Type": "application/json" },
   });
   return res.data;
@@ -251,7 +251,7 @@ async function getIngredientsFromDatabase(recipe_id) {
 async function getCategoriesFromDatabase() {
   const res = await axios({
     method: "get",
-    url: "https://cheers-application.herokuapp.com/api/drink_categories",
+    url: "/api/drink_categories",
     headers: { "Content-Type": "application/json" },
   });
   return res.data;

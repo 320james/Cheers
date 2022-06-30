@@ -85,7 +85,7 @@ function Navbar({ toggle }) {
 async function getUserFromDatabase() {
     const res = await axios({
         method: "get",
-        url: "https://cheers-application.herokuapp.com/api/auth",
+        url: "/api/auth",
         headers: { "Content-Type": "application/json" },
     });
     return res.data;

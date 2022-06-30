@@ -57,7 +57,7 @@ function HomePage(prop) {
 async function getAnnouncementsFromDatabase() {
     const res = await axios({
         method: "get",
-        url: `https://cheers-application.herokuapp.com/api/messages/`,
+        url: `/api/messages/`,
         headers: { "Content-Type": "application/json" },
     });
     return res.data;

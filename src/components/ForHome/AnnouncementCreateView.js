@@ -93,7 +93,7 @@ const AnnouncementCreateView = () => {
         let body = { title, user, content: message };
 
         axios
-            .post("https://cheers-application.herokuapp.com/api/messages", body)
+            .post("/api/messages", body)
             .then((res) => console.log("saved! " + res.data))
             .catch((err) => console.log(err));
 

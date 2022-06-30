@@ -159,7 +159,7 @@ const EnhancedTableToolbar = (props) => {
         console.log(selectedUser);
         await axios({
           method: "delete",
-          url: `https://cheers-application.herokuapp.com/api/users/${selectedUser}`,
+          url: `/api/users/${selectedUser}`,
           headers: { "Content-Type": "application/json" },
         });
       });
@@ -177,7 +177,7 @@ const EnhancedTableToolbar = (props) => {
         console.log(selectedUser);
         await axios({
           method: "PUT",
-          url: `https://cheers-application.herokuapp.com/api/users/${selectedUser}`,
+          url: `/api/users/${selectedUser}`,
           headers: { "Content-Type": "application/json" },
         });
       });
@@ -293,7 +293,7 @@ export default function ReportsPage() {
   async function getCurrentUserFromDatabase() {
     const res = await axios({
       method: "get",
-      url: "https://cheers-application.herokuapp.com/api/auth",
+      url: "/api/auth",
       headers: { "Content-Type": "application/json" },
     });
     return res.data;
@@ -302,7 +302,7 @@ export default function ReportsPage() {
   async function getUsersFromDatabase() {
     const res = await axios({
       method: "get",
-      url: "https://cheers-application.herokuapp.com/api/users",
+      url: "/api/users",
       headers: { "Content-Type": "application/json" },
     });
     return res.data;
@@ -311,7 +311,7 @@ export default function ReportsPage() {
   async function getNumPostsByUser() {
     const res = await axios({
       method: "post",
-      url: "https://cheers-application.herokuapp.com/api/posts/counts",
+      url: "/api/posts/counts",
       headers: { "Content-Type": "application/json" },
     });
     return res.data;

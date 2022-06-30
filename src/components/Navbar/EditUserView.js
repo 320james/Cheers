@@ -111,10 +111,10 @@ const EditUserView = () => {
     };
 
     axios
-      .put(`https://cheers-application.herokuapp.com/api/users`, body)
+      .put(`/api/users`, body)
       .then((res) => {
         console.log("saved! " + res.data);
-        axios.put(`https://cheers-application.herokuapp.com/api/users/name`, body).then((res) => {
+        axios.put(`/api/users/name`, body).then((res) => {
           console.log("saved! " + res.data);
 
         });
@@ -184,7 +184,7 @@ const EditUserView = () => {
 async function getUserFromDatabase() {
   const res = await axios({
     method: "get",
-    url: "https://cheers-application.herokuapp.com/api/auth",
+    url: "/api/auth",
     headers: { "Content-Type": "application/json" },
   });
   return res.data[0];
