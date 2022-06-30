@@ -1,10 +1,10 @@
 {
     "mysql": {
         "connectionLimit": 50,
-        "host": "us-cdbr-east-05.cleardb.net",
-        "user": "ba1eb85c79ea5f",
-        "password": "f85ccbfe",
-        "database": "heroku_8cc1c05f95fd889"
+        "host": "us-cdbr-east-06.cleardb.net",
+        "user": "b0079b1db13b5f",
+        "password": "f4ef1e6f",
+        "database": "heroku_e1fc0fe4ab8a026"
     },
     "jwtSecret": "mysecrettoken"
 }
