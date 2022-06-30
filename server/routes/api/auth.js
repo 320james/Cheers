@@ -11,12 +11,12 @@ var mysqlPool = require("../../mysqlPool");
 // @route   GET api/auth
 // @desc    Test route
 // @access  Public (aka you don't need a token to access this route)
-router.get('/', auth, async (req, res) => {
+router.get('/*', auth, async (req, res) => {
     // Getting user's data after receiving web token
     // Put in try catch because we are getting from database (async/await)
     try {
         // const user = await User.findById(req.user.id).select('-password');  // Find user by id without password
-        mysqlPool.getConnection(function(err, mclient) {
+        mysqlPool.getConnection(function (err, mclient) {
             let sql = `SELECT * FROM users WHERE user_name="${req.user.id}"`;
             mclient.query(sql, async (err, resp) => {
                 mclient.release();
@@ -26,7 +26,7 @@ router.get('/', auth, async (req, res) => {
                 res.json(resp);
             })
         });
-    } catch(err) {
+    } catch (err) {
         console.log(err.message);
         res.status(500).send('Server error');
     }
@@ -38,7 +38,7 @@ router.get('/', auth, async (req, res) => {
 // @desc    Authenticate user & get token (Login)
 // @access  Public
 
-router.post('/',
+router.post('/*',
     [
         check('email', 'Please include a valid email').isEmail(),
         check('password', 'Password is required')
@@ -54,7 +54,7 @@ router.post('/',
 
         try {
             // See if user doesn't exist
-            mysqlPool.getConnection(function(err, mclient) {
+            mysqlPool.getConnection(function (err, mclient) {
                 let sql = `SELECT * FROM users WHERE email="${email}"`;
                 mclient.query(sql, async (err, resp) => {
                     mclient.release();
@@ -72,7 +72,7 @@ router.post('/',
                     const isMatch = await bcrypt.compare(password, user.password);
 
                     if (!isMatch) {
-                        return res.status(400).json({ errors: [{ msg: 'Invalid credentials' }] }); 
+                        return res.status(400).json({ errors: [{ msg: 'Invalid credentials' }] });
                     }
 
                     // Jsonwebtoken stuff
@@ -83,9 +83,9 @@ router.post('/',
                     }
                     // Sign the token
                     jwt.sign(
-                        payload, 
+                        payload,
                         config.get('jwtSecret'),
-                        { expiresIn: 360000 }, 
+                        { expiresIn: 360000 },
                         (err, token) => {
                             if (err) throw err;
                             res.json({ token });
