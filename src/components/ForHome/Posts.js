@@ -43,7 +43,7 @@ const Posts = (props) => {
 async function getUserFromDatabase() {
     const res = await axios({
         method: "get",
-        url: "/api/auth",
+        url: "https://cheers-application.herokuapp.com/api/auth",
         headers: { "Content-Type": "application/json" },
     });
     return res.data;

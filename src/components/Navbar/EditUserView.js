@@ -73,7 +73,7 @@ const EditUserView = () => {
       console.log(res);
       setNewFirstName(res.first_name);
       setNewLastName(res.last_name);
-    //   setNewPassword(res.password);
+      //   setNewPassword(res.password);
     }
     fetchData();
   }, []);
@@ -111,12 +111,12 @@ const EditUserView = () => {
     };
 
     axios
-      .put(`/api/users`, body)
+      .put(`https://cheers-application.herokuapp.com/api/users`, body)
       .then((res) => {
         console.log("saved! " + res.data);
-        axios.put(`/api/users/name`, body).then((res) => {
+        axios.put(`https://cheers-application.herokuapp.com/api/users/name`, body).then((res) => {
           console.log("saved! " + res.data);
-          
+
         });
       })
       .catch((err) => console.log(err));
@@ -155,8 +155,8 @@ const EditUserView = () => {
             isEmptyField(newPassword)
               ? "Required field"
               : newPassword.length < 6
-              ? "Must be at least 6 characters"
-              : ""
+                ? "Must be at least 6 characters"
+                : ""
           }
           multiline
           variant="outlined"
@@ -184,7 +184,7 @@ const EditUserView = () => {
 async function getUserFromDatabase() {
   const res = await axios({
     method: "get",
-    url: "/api/auth",
+    url: "https://cheers-application.herokuapp.com/api/auth",
     headers: { "Content-Type": "application/json" },
   });
   return res.data[0];

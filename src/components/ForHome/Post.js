@@ -92,7 +92,7 @@ const Post = ({ title, user, rating, category, instructions, recipe_id, post_id,
 
                 <div className={classes.buttonContainer}>
                     <Fragment>
-                        <Delete deleteEndpoint={`/api/posts/${post_id}`} />
+                        <Delete deleteEndpoint={`https://cheers-application.herokuapp.com/api/posts/${post_id}`} />
                         <Link
                             to={`/edit/${post_id}`}
                             style={{ textDecoration: "none", color: "inherit" }}
@@ -138,7 +138,7 @@ const Post = ({ title, user, rating, category, instructions, recipe_id, post_id,
 async function getIngredientsFromDatabase(recipe_id) {
     const res = await axios({
         method: "get",
-        url: `/api/ingredients/${recipe_id}`,
+        url: `https://cheers-application.herokuapp.com/api/ingredients/${recipe_id}`,
         headers: { "Content-Type": "application/json" },
     });
     return res.data;

@@ -28,14 +28,14 @@ app.get('/', (req, res) => {
 });
 
 // Define Routes
-app.use('/api/users', require('./routes/api/users'));   // makes /api/users pertain to '/' in users.js
-app.use('/api/auth', require('./routes/api/auth'));
-app.use('/api/posts', require('./routes/api/posts'));
-app.use('/api/drink_categories', require('./routes/api/drink_categories'));
-app.use('/api/recipes', require('./routes/api/recipes'));
-app.use('/api/messages', require('./routes/api/messages'));
-app.use('/api/ingredients', require('./routes/api/ingredients'));
-app.use('/api/uses', require('./routes/api/uses'));
+app.use('https://cheers-application.herokuapp.com/api/users', require('./routeshttps://cheers-application.herokuapp.com/api/users'));   // makes https://cheers-application.herokuapp.com/api/users pertain to '/' in users.js
+app.use('https://cheers-application.herokuapp.com/api/auth', require('./routeshttps://cheers-application.herokuapp.com/api/auth'));
+app.use('https://cheers-application.herokuapp.com/api/posts', require('./routeshttps://cheers-application.herokuapp.com/api/posts'));
+app.use('https://cheers-application.herokuapp.com/api/drink_categories', require('./routeshttps://cheers-application.herokuapp.com/api/drink_categories'));
+app.use('https://cheers-application.herokuapp.com/api/recipes', require('./routeshttps://cheers-application.herokuapp.com/api/recipes'));
+app.use('https://cheers-application.herokuapp.com/api/messages', require('./routeshttps://cheers-application.herokuapp.com/api/messages'));
+app.use('https://cheers-application.herokuapp.com/api/ingredients', require('./routeshttps://cheers-application.herokuapp.com/api/ingredients'));
+app.use('https://cheers-application.herokuapp.com/api/uses', require('./routeshttps://cheers-application.herokuapp.com/api/uses'));
 
 const PORT = process.env.PORT || 5000;
 

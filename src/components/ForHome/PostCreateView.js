@@ -87,7 +87,7 @@ const PostCreateView = () => {
   async function getUserFromDatabase() {
     const res = await axios({
       method: "get",
-      url: "/api/auth",
+      url: "https://cheers-application.herokuapp.com/api/auth",
       headers: { "Content-Type": "application/json" },
     });
     return res.data;
@@ -96,7 +96,7 @@ const PostCreateView = () => {
   async function getCategoriesFromDatabase() {
     const res = await axios({
       method: "get",
-      url: "/api/drink_categories",
+      url: "https://cheers-application.herokuapp.com/api/drink_categories",
       headers: { "Content-Type": "application/json" },
     });
     return res.data;
@@ -158,7 +158,7 @@ const PostCreateView = () => {
     };
 
     axios
-      .post("/api/posts", formData)
+      .post("https://cheers-application.herokuapp.com/api/posts", formData)
       .then((res) => console.log("saved! " + res.data))
       .catch((err) => console.log(err));
 
