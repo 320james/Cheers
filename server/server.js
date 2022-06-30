@@ -25,6 +25,20 @@ app.use(cors({
   credentials: true
 }))
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://cheers-application.netlify.app"); // the link of my front-end app on Netlify
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, DELETE, OPTIONS"
+  );
+  res.setHeader('content-type', 'application/json');
+  next();
+});
+
 // Init Middleware
 app.use(express.json({ extended: false }));
 app.use(bodyParser.json());
