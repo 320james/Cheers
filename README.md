@@ -38,5 +38,8 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'your new password'; ALTER USER 'roo
 
 ![image](https://user-images.githubusercontent.com/48611641/170760093-aae051d8-eae8-44ca-b599-4d8a1358fca8.png)
 
+###Developers:
+
+James Kim & Bryant Nguyen
 
 
