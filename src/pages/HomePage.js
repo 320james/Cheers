@@ -58,7 +58,7 @@ async function getAnnouncementsFromDatabase() {
     const res = await axios({
         method: "get",
         url: `https://cheers-application.herokuapp.com/api/messages/`,
-        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app" },
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true' },
     });
     return res.data;
 }

@@ -104,7 +104,7 @@ async function deletePost(endpoint) {
         url: endpoint,
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://cheers-application.netlify.app"
+            "Access-Control-Allow-Origin": "https://cheers-application.netlify.app", 'Access-Control-Allow-Credentials': 'true'
         },
     });
     return res.data;
