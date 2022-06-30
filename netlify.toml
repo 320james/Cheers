@@ -1,11 +1,10 @@
 [[redirects]]
-  force = true
-  from = "/api/*"
-  status = 200
-  to = "https://cheers-application.herokuapp.com/api/:splat"
-
-[[redirects]]
   from = "/*"
   status = 200
   to = "/index.html"
 
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
